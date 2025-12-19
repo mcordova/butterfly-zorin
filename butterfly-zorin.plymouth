@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=Butterfly Zorin
+Description=Mariposa batiendo las alas para Zorin OS
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/butterfly-zorin
+ScriptFile=/usr/share/plymouth/themes/butterfly-zorin/butterfly-zorin.script
