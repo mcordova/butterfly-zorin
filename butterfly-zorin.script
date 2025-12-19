@@ -1,0 +1,28 @@
+wallpaper_image = Image("fondo.png");  // opcional, si tienes fondo
+wallpaper_sprite = Sprite(wallpaper_image);
+wallpaper_sprite.SetZ(-100);
+
+frames = 10; // número de imágenes de la mariposa
+butterfly = [];
+i = 0;
+while (i < frames) {
+    filename = "butterfly_" + String.FromInteger(i) + ".png";
+    butterfly[i] = Image(filename);
+    i = i + 1;
+}
+
+current = 0;
+sprite = Sprite(butterfly[0]);
+
+screen_w = Window.GetWidth();
+screen_h = Window.GetHeight();
+sprite.SetX((screen_w - butterfly[0].GetWidth()) / 2);
+sprite.SetY((screen_h - butterfly[0].GetHeight()) / 2);
+
+fun animate() {
+    current = (current + 1) % frames;
+    sprite.SetImage(butterfly[current]);
+    Plymouth.RestartAnimation(0.05); // velocidad de batido
+}
+
+Plymouth.SetAnimationCallback(animate);
